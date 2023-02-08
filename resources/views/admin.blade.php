@@ -20,7 +20,6 @@
             animation: gradient 15s ease infinite;
             height: 100vh;
         }
-
         @keyframes gradient {
             0% {
                 background-position: 0% 50%;
@@ -32,13 +31,10 @@
                 background-position: 0% 50%;
             }
         }
-
         label {
             font-weight: bold;
         }
-
     </style>
-
   </head>
   <body>
     

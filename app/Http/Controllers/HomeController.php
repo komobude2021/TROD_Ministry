@@ -2,11 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Helper\UserHelper;
 use App\Helper\Volunteer;
-use Illuminate\Http\Request;
 use App\Mail\ContactFormEmail;
 use App\Http\Requests\AdminLogin;
-use Illuminate\Support\Facades\DB;
 use App\Mail\VolunteerRegistration;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Mail;
@@ -16,9 +15,16 @@ use RealRashid\SweetAlert\Facades\Alert;
 
 class HomeController extends Controller
 {
+    protected $userHelper;
+
+    public function __construct(UserHelper $userHelper)
+    {
+        $this->userHelper = $userHelper;
+    }
+
     public function index()
     {
-        $lastestEvent = DB::table('events')->where('deleted_at', null)->orderBy('created_at', 'desc')->limit(1)->get();
+        $lastestEvent = $this->userHelper->getLatestEvent();
         return view('index', compact('lastestEvent'));
     }
 
@@ -47,13 +53,13 @@ class HomeController extends Controller
 
     public function event()
     {
-        $events = DB::table('events')->where('deleted_at', null)->orderBy('created_at', 'desc')->limit(8)->get();
+        $events = $this->userHelper->getEventList();
         return view('event', compact('events'));
     }
 
     public function live()
     {
-        $live = DB::table('live_view')->where('id', '1')->get();
+        $live = $this->userHelper->getLiveViewEvent();
         return view('live', compact('live'));
     }
 

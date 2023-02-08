@@ -92,9 +92,13 @@
       </div>
 
       <div class="carousel-item">
-        <img src="<?php echo e(asset('images/slider/FridayEveningWithJesusChrist.webp')); ?>" class="d-block w-100 kelr2" alt="The Root of David Ministry">
+        <div class="d-none d-md-block">
+            <img src="<?php echo e(asset('images/slider/FridayEveningWithJesusChrist.webp')); ?>" class="d-block w-100 kelr2" alt="The Root of David Ministry">
+        </div>
+        <div class="-xs-block d-sm-block d-md-none d-lg-none d-xl-none">
+            <img src="<?php echo e(asset('images/slider/FridayEveningWithJesusChrist2.webp')); ?>" class="d-block w-100 kelr2" alt="The Root of David Ministry">
+        </div>
       </div>
-
 
       <div class="carousel-item">
         <img src="<?php echo e(asset('images/slider/BibleStudy.webp')); ?>" class="d-block w-100 kelr" alt="The Root of David Ministry">
@@ -211,8 +215,8 @@
                             The <span>Root Of David </span> (TROD)
                         </h2>
 
-                        <p class="subheading text-center" style="margin-bottom: 0px">The Root of David also known as TROD is committed to reawaking the prayer altar of believer, sharing love with our community, preaching the message of Jesus Christ and His kingdom. 
-                            <a name="summit"></a>
+                        <p class="subheading text-center" style="margin-bottom: 0px">The Root of David also known as TROD is committed to reawaking the prayer altar of 
+                            believer, sharing love with our community, preaching the message of Jesus Christ and His kingdom. <a name="summit"></a>
                         </p>
 
                     </div>
@@ -514,7 +518,7 @@
 <script>
     $(document).ready(function(){
         $('.carousel').carousel({
-            interval: 10000,
+            interval: 5000,
             pause: true
         });
     });
