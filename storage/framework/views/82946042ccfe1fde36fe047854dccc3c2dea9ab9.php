@@ -129,8 +129,8 @@
 							<div style="color: #B27522; padding-bottom: 5px">
 								Next Live Service:
 							</div>
-							<div>
-								<?php echo e(date("jS F Y, h:i A", strtotime($live[0]->next_event_date))); ?><br/>
+							<div >
+								<?php echo e(date("jS F Y, h:i A", strtotime($live[0]->next_event_date))); ?> (G.M.T)<br/>
 								<i class="fa fa-check-square-o"></i> <?php echo e($live[0]->next_event); ?>
 
 							</div>

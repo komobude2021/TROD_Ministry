@@ -128,7 +128,7 @@
 								Next Live Service:
 							</div>
 							<div >
-								{{ date("jS F Y, h:i A", strtotime($live[0]->next_event_date)) }}<br/>
+								{{ date("jS F Y, h:i A", strtotime($live[0]->next_event_date)) }} (G.M.T)<br/>
 								<i class="fa fa-check-square-o"></i> {{ $live[0]->next_event }}
 							</div>
 						</div>
