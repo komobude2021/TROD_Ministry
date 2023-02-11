@@ -35,7 +35,7 @@ class AdminHelper {
     {
         $curl = curl_init();
         $fields = array(
-            'app_id' => 'db75874c-bf7a-4944-bea1-f7645477ed9b',
+            'app_id' => env('ONE_SIGNAL_APP_ID'), 
             'included_segments' => ["Subscribed Users"],
             'contents' => ["en" =>"Live Now - " . ucwords($data->title)],
             'headings' => ["en"=>"The Root of David - TROD Ministry"],
@@ -53,7 +53,7 @@ class AdminHelper {
             CURLOPT_CUSTOMREQUEST => "POST",
             CURLOPT_POSTFIELDS => $fields,
             CURLOPT_HTTPHEADER => [
-                "Authorization: Basic NzUyMTE4ZDYtNDRiNi00NjdlLWFhN2ItMzdkZWJjZTdhMjU5",
+                "Authorization: Basic " .  env('ONE_SIGNAL_AUTHORIZATION'),
                 "accept: application/json",
                 "content-type: application/json"
             ],
@@ -112,10 +112,10 @@ class AdminHelper {
 
         $curl = curl_init();
         $fields = array(
-            'app_id' => 'db75874c-bf7a-4944-bea1-f7645477ed9b',
+            'app_id' => env('ONE_SIGNAL_APP_ID'),
             'included_segments' => ["Subscribed Users"],
-            'contents' => ["en" =>"New Sermon - " . ucwords($data->title)],
-            'headings' => ["en"=>"The Root of David - TROD Ministry"],
+            'contents' => ["en" => "New Sermon - " . ucwords($data->title)],
+            'headings' => ["en" => "The Root of David - TROD Ministry"],
             'big_picture' => $imageUrl,
         );
 
@@ -131,7 +131,7 @@ class AdminHelper {
             CURLOPT_CUSTOMREQUEST => "POST",
             CURLOPT_POSTFIELDS => $fields,
             CURLOPT_HTTPHEADER => [
-                "Authorization: Basic NzUyMTE4ZDYtNDRiNi00NjdlLWFhN2ItMzdkZWJjZTdhMjU5",
+                "Authorization: Basic " . env('ONE_SIGNAL_AUTHORIZATION'),
                 "accept: application/json",
                 "content-type: application/json"
             ],
